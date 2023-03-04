@@ -1,0 +1,153 @@
+/* CSS RESET */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+/* ROOT */
+
+:root {
+    --sedan-bg: hsl(31, 77%, 52%);
+    --suv-bg: hsl(184, 100%, 22%);
+    --luxury-bg: hsl(179, 100%, 13%);
+    --p-color: hsla(0, 0%, 100%, 0.75);
+    --bg-head-button: hsl(0, 0%, 95%);
+
+    --font-fam-lexend: 'Lexend Deca', sans-serif;
+    --font-fam-big-shoulders: 'Big Shoulders Display', cursive;
+    --fsize: 15px;
+    --fw-lexend: 400;
+    --fw-big-shoulders: 700;
+}
+
+/* GENERAL STYLING */
+.grid-parent {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.grid-item {
+  display: grid;
+  gap: 2em;
+  padding: 3em;
+}
+
+.sedan {
+  background-color: var(--sedan-bg);
+  border-radius: 8px 8px 0 0;
+}
+.suv {
+  background-color: var(--suv-bg);
+}
+.luxury {
+  background-color: var(--luxury-bg);
+  border-radius: 0 0 8px 8px;
+}
+
+
+/* UTILITIES */
+.grid-header {
+  font-family: var(--font-fam-big-shoulders);
+  font-size: 3rem;
+  font-weight: var(--fw-big-shoulders);
+  color: var(--bg-head-button);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.grid-p {
+  font-family: var(--font-fam-lexend);
+  color: var(--bg-head-button);
+  opacity: 0.8;
+}
+
+.grid-button {
+  font-family: var(--font-fam-lexend);
+  font-size: var(--fsize);
+  width: 60%;
+  padding: 0.5rem;
+  border-radius: 25px;
+  border: 2px solid var(--bg-head-button);
+}
+
+.grid-button:hover {
+  color: var(--bg-head-button);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.sedan-btn {
+  color: var(--sedan-bg);
+}
+
+.suv-btn {
+  color: var(--suv-bg);
+}
+
+.luxury-btn {
+  color: var(--luxury-bg);
+}
+
+
+
+/* MEDIA QUERIES */
+@media (min-width: 1080px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .grid-parent {
+    display: flex;
+    flex-direction: row;
+    width: 80%
+  }
+
+  .sedan {
+    border-radius: 8px 0 0 8px;
+  }
+
+  .luxury {
+    border-radius: 0 8px 8px 0;
+  }
+
+  .grid-button {
+    margin-top: 5em;
+  }
+}
+
+@media (min-width: 1440px) {
+  .grid-parent {
+    width: 65%;
+  }
+}
+
+
+
+
